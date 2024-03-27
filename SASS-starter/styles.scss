@@ -1,0 +1,78 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+$color-primary: #1d3557;
+$color-secondary: #ffffff;
+$color-teritiary: #e63946;
+$color-button-bg: #6c757c;
+$color-text: #f0f8ff;
+
+@mixin displayFlex {
+  list-style: none;
+  display: flex;
+}
+@mixin linkStyles {
+  margin: 0.5rem;
+  text-decoration: none;
+  color: $color-text;
+}
+
+@mixin buttonStyles($color) {
+  background-color: $color;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  border-radius: 2rem;
+}
+
+@function divide($a, $b) {
+  @return $a/$b;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+nav {
+  margin: 2rem;
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav {
+  @include displayFlex();
+  li {
+    margin: 1rem;
+  }
+  a:link {
+    @include linkStyles;
+  }
+}
+.btns {
+  @include displayFlex();
+  a:link {
+    @include linkStyles;
+  }
+  .btn-main {
+    @include buttonStyles($color-teritiary);
+  }
+  .btn-hot {
+    @include buttonStyles($color-button-bg);
+  }
+}
+
+.btn-main {
+  &:hover {
+    background-color: darken($color-teritiary, 15%);
+  }
+}
+.btn-hot {
+  &:hover {
+    background-color: lighten($color-teritiary, 15%);
+  }
+}

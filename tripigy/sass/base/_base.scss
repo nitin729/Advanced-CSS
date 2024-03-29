@@ -1,0 +1,28 @@
+/* Reset using universal selector */
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* border and padding is not added to total height & total width  */
+}
+
+html {
+  //tHIS DEfines what 1rem is
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  @include bg-gradient($color-primary-light, $color-primary-dark);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.background {
+  display: flex;
+}

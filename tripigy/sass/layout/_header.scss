@@ -1,0 +1,108 @@
+@use "../abstracts" as *;
+
+.header {
+  font-size: 1.4rem;
+  height: 6rem;
+  background-color: #fff;
+  border-bottom: $color-grey-light-2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    height: 4rem;
+    margin: 1rem;
+  }
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 40%;
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    color: $color-grey-dark-1;
+    background-color: $color-grey-light-2;
+    border-radius: 10rem;
+    padding: 0.7rem 2rem;
+    width: 90%;
+    margin: -3.5rem;
+    transition: all 0.3s;
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: $color-grey-light-3;
+    }
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: $color-grey-light-4;
+    }
+  }
+  &__btn {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      transform: translateX(-1.5rem);
+      background-color: $color-grey-light-3;
+    }
+  }
+
+  &__icon {
+    @include icon-dimensions();
+  }
+}
+
+.user-nav {
+  display: flex;
+  // justify-content: center;
+
+  align-self: stretch;
+  // align-items: center;
+
+  //Below selector selects the direct children of the parent
+  & > * {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    height: 100%;
+  }
+  & > *:hover {
+    background-color: $color-grey-light-3;
+  }
+  &__icon-box {
+    // flex-direction: column;
+    position: relative;
+  }
+  &__icon {
+    @include icon-dimensions();
+    fill: $color-grey-dark-2;
+  }
+  &__notification {
+    background-color: $color-primary;
+    color: #fff;
+    font-size: 0.8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.8rem;
+    right: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+
+    margin-right: 1rem;
+  }
+}

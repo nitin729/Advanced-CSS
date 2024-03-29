@@ -1,0 +1,6 @@
+@use "../abstracts/variables" as *; /* Set project wide font styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}

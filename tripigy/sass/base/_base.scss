@@ -14,10 +14,13 @@ html {
   //tHIS DEfines what 1rem is
   font-size: 62.5%;
   box-sizing: border-box;
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
 }
 
 body {
-  @include bg-gradient($color-primary-light, $color-primary-dark);
+  @include bg-gradient();
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;

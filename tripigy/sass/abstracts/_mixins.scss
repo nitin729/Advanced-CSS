@@ -1,6 +1,6 @@
 @use "../abstracts/variables" as *;
 
-@mixin bg-gradient($color1, $color2) {
+@mixin bg-gradient() {
   background-image: linear-gradient(to right bottom, (#ff3366, #ba265d));
 }
 

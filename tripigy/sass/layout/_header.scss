@@ -4,7 +4,7 @@
   font-size: 1.4rem;
   height: 6rem;
   background-color: #fff;
-  border-bottom: 1px solid $color-grey-light-4;
+  border-bottom: $line;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,14 +12,26 @@
     height: 4rem;
     margin: 1rem;
   }
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 11rem;
+    padding-bottom: 2rem;
+  }
 }
 
 .search {
+  flex: 0 0 40%;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 0 0 40%;
-
+  @media only screen and (max-width: $bp-smallest) {
+    //  justify-content: center;
+    order: 1;
+    flex: 0 0 100%;
+    //  background-color: $color-grey-light-2;
+  }
   &__input {
     font-family: inherit;
     font-size: inherit;
